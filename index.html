@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="title">Подбор Oriflame за одну минуту</title>
+<meta name="description" content="Подбор продуктов Oriflame за одну минуту. Заказ, оплата и доставка — на официальном сайте компании.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+  <p class="top__brand"><span id="consultant-name"></span><span data-i18n="brand">Независимый бренд-партнёр Oriflame</span></p>
+  <div class="langs" role="group" aria-label="Language">
+    <button type="button" data-lang="kk">Қаз</button>
+    <button type="button" data-lang="ru">Рус</button>
+    <button type="button" data-lang="en">Eng</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero__copy">
+      <h1 data-i18n="h1">Подберите Oriflame под себя за одну минуту</h1>
+      <p class="hero__lead" data-i18n="lead"></p>
+    </div>
+    <div class="quiz" id="quiz" aria-live="polite">
+      <noscript>Включите JavaScript, чтобы пройти подбор.</noscript>
+    </div>
+  </section>
+
+  <section class="how">
+    <h2 data-i18n="how_title">Как проходит заказ</h2>
+    <ol class="how__steps">
+      <li><h3 data-i18n="how1_t"></h3><p data-i18n="how1"></p></li>
+      <li><h3 data-i18n="how2_t"></h3><p data-i18n="how2"></p></li>
+      <li><h3 data-i18n="how3_t"></h3><p data-i18n="how3"></p></li>
+    </ol>
+  </section>
+
+  <section class="paths">
+    <article class="path path--product">
+      <h2 data-i18n="pp_title"></h2>
+      <p data-i18n="pp_text"></p>
+      <button type="button" class="btn btn--ink" data-start="p" data-i18n="path_p"></button>
+    </article>
+    <article class="path path--business">
+      <h2 data-i18n="pb_title"></h2>
+      <p data-i18n="pb_text"></p>
+      <p class="path__note" data-i18n="income_note"></p>
+      <button type="button" class="btn btn--light" data-start="b" data-i18n="path_b"></button>
+    </article>
+  </section>
+
+  <section class="faq">
+    <h2 data-i18n="faq_title">Частые вопросы</h2>
+    <details><summary data-i18n="faq1_q"></summary><p data-i18n="faq1_a"></p></details>
+    <details><summary data-i18n="faq2_q"></summary><p data-i18n="faq2_a"></p></details>
+    <details><summary data-i18n="faq3_q"></summary><p data-i18n="faq3_a"></p></details>
+    <details><summary data-i18n="faq4_q"></summary><p data-i18n="faq4_a"></p></details>
+    <details><summary data-i18n="faq5_q"></summary><p data-i18n="faq5_a"></p></details>
+  </section>
+</main>
+
+<footer class="foot">
+  <p data-i18n="foot"></p>
+</footer>
+
+<nav class="bar" id="bar" hidden>
+  <a class="bar__link bar__link--tg" data-link="tg" target="_blank" rel="noopener" data-i18n="bar_tg" hidden></a>
+  <a class="bar__link bar__link--wa" data-link="wa" target="_blank" rel="noopener" data-i18n="bar_wa" hidden></a>
+</nav>
+
+<script src="config.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
