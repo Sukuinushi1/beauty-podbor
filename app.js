@@ -142,7 +142,8 @@
     link(tgUrl(), tr('cta_tg'), '');
     link(waUrl(`${tr('wa_text')} ${title}`), tr('cta_wa'), '');
 
-    quizEl.append(
+    // null отбрасываем: append() превратил бы его в текст «null»
+    quizEl.append(...[
       ...meta(1),
       el('p', { class: 'result__title', text: title }),
       el('p', { class: 'result__text', text: tr(resKey) }),
@@ -150,7 +151,7 @@
       actions.children.length ? actions : null,
       C.sheetsUrl ? leadForm(resKey) : null,
       el('button', { type: 'button', class: 'quiz__back result__restart', text: tr('restart'), onclick: () => { state.branch = null; render(); } }),
-    );
+    ].filter(Boolean));
   }
 
   // ---------- форма заявки ----------
