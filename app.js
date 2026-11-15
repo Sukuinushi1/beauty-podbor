@@ -5,7 +5,7 @@
     p: [['pq1', ['skin', 'beauty', 'well']], ['pq2', ['self', 'gift', 'family']], ['pq3', ['low', 'mid', 'high']]],
     b: [['bq1', ['discount', 'income', 'leader']], ['bq2', ['few', 'daily', 'full']], ['bq3', ['none', 'sales', 'mlm']]],
   };
-  const CHIPS = ['var(--berry)', 'var(--rose)', 'var(--sage)'];
+  const CHIPS = ['var(--mint)', 'var(--lilac)', 'var(--cloud)'];
   const digits = (s) => String(s || '').replace(/\D/g, '');
   const source = (new URLSearchParams(location.search).get('utm_source') || '').replace(/[^\w-]/g, '').slice(0, 40);
 
@@ -104,6 +104,10 @@
 
   function render() {
     quizEl.replaceChildren();
+    // короткое появление нового вопроса — ответ на нажатие
+    quizEl.classList.remove('is-step');
+    void quizEl.offsetWidth;
+    quizEl.classList.add('is-step');
     if (!state.branch) {
       quizEl.append(
         ...meta(0),
@@ -137,8 +141,8 @@
     const actions = el('div', { class: 'result__actions' });
     const link = (url, label, cls) => url && actions.append(
       el('a', { class: `btn ${cls}`, href: url, target: '_blank', rel: 'noopener', text: label }));
-    if (state.branch === 'p') link(C.shopUrl, tr('cta_order'), 'btn--berry');
-    else link(C.joinUrl, tr('cta_join'), 'btn--berry');
+    if (state.branch === 'p') link(C.shopUrl, tr('cta_order'), 'btn--accent');
+    else link(C.joinUrl, tr('cta_join'), 'btn--accent');
     link(tgUrl(), tr('cta_tg'), '');
     link(waUrl(`${tr('wa_text')} ${title}`), tr('cta_wa'), '');
 
